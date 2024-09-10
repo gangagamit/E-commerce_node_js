@@ -5,32 +5,15 @@ const productServices = require("../services/product.service");
 exports.addNewProduct = async (req, res) => { 
     try { 
         // console.log(req.body); 
-        const { title, description, category, price, discountPercentage, brand,  
-            sku, weight, rating, stock, tags, dimensions, reviews, returnPolicy,  
-            minimumOrderQuantity, meta, images, thumbnail, warrantyInformation,  
-            shippingInformation, availabilityStatus } = req.body; 
-        let product = await Product.findOne({sku,isDelete:false}); 
+        const { title, description, category, price, brand,  
+             rating,currency,size,color,material} = req.body; 
+        let product = await Product.findOne({title,isDelete:false}); 
         if(product) 
             return res.status(400).json({message:"Product already exists"}); 
         product = await Product.create({ 
-            title, 
-            description, 
-            category, 
-            price, 
-            discountPercentage, 
-            brand, 
-            sku, 
-            weight, 
-            rating, 
-            stock, 
-            tags, 
-            dimensions, // Make sure this is an object with width, height, and depth 
-            reviews,  
-            images, 
-            thumbnail, 
-            warrantyInformation, 
-            shippingInformation, 
-            availabilityStatus, 
+            title, description, category, price, brand,  
+            rating,currency,size,color,material,
+           
             meta: { 
                 createdAt: new Date().toISOString(), 
                 updatedAt: new Date().toISOString(), 

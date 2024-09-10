@@ -27,6 +27,11 @@ app.use("/api/otp",otpRoutes);
 //product
 const productRoutes = require('./routes/product.routes');
 app.use('/api/product',productRoutes);
+//Cart
+
+const cartRoutes = require('./routes/cart.routes');
+app.use("/api/cart",cartRoutes);
+
 app.listen(port,()=>{
     mongoose.connect(process.env.Mongo_URI)
     .then(()=>console.log('database connect successfully'))

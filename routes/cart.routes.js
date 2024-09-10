@@ -11,8 +11,8 @@ const {
 
 const {VerifyToken} = require('../helpers/tokenVerify');
 
-cartRoutes.post('/addToCart',VerifyToken,addtoCart);
-cartRoutes.get('/getAllCarts',getAllCarts);
+cartRoutes.post('/',VerifyToken,addtoCart);
+cartRoutes.get('/',getAllCarts);
 cartRoutes.put('/update-carts',VerifyToken,updateCart);
 cartRoutes.delete('/delete-carts',deleteToCart)
 
