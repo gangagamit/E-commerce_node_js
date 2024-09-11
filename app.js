@@ -32,6 +32,9 @@ app.use('/api/product',productRoutes);
 const cartRoutes = require('./routes/cart.routes');
 app.use('/api/cart',cartRoutes);
 
+//order
+const orderRoutes = require('./routes/order.routes');
+app.use('/api/order',orderRoutes);
 app.listen(port,()=>{
     mongoose.connect(process.env.Mongo_URI)
     .then(()=>console.log('database connect successfully'))
