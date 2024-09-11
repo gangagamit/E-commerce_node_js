@@ -30,7 +30,7 @@ app.use('/api/product',productRoutes);
 //Cart
 
 const cartRoutes = require('./routes/cart.routes');
-app.use("/api/cart",cartRoutes);
+app.use('/api/cart',cartRoutes);
 
 app.listen(port,()=>{
     mongoose.connect(process.env.Mongo_URI)

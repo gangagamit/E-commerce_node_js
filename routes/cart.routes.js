@@ -9,11 +9,11 @@ const {
 } 
 =require('../controller/cart.controller');
 
-const {VerifyToken} = require('../helpers/tokenVerify');
+const {VerifyToken, verifyToken} = require('../helpers/tokenVerify');
 
-cartRoutes.post('/',VerifyToken,addtoCart);
+cartRoutes.post('/addtoCart',verifyToken,addtoCart);
 cartRoutes.get('/',getAllCarts);
-cartRoutes.put('/update-carts',VerifyToken,updateCart);
+cartRoutes.put('/upadate-cart',verifyToken,updateCart)
 cartRoutes.delete('/delete-carts',deleteToCart)
 
 module.exports= cartRoutes;

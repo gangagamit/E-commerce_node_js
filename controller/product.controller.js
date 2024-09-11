@@ -1,6 +1,6 @@
 const Product = require("../model/product.model"); 
 const productServices = require("../services/product.service");
- 
+ const productService = new productServices()
 // Add New User 
 exports.addNewProduct = async (req, res) => { 
     try { 
