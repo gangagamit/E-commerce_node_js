@@ -1,10 +1,13 @@
-const express = require('express');
+const express = require("express");
 
 const orderRoutes = express.Router();
 
-const {addNewOrder} = require("../controller/order.controller");
+const {addNewOrder , deleteOrder} = require("../controller/order.controller");
+
 const {verifyToken} = require("../helpers/tokenVerify");
 
-orderRoutes.post("/",verifyToken,addNewOrder);
+orderRoutes.post("/addorder" , verifyToken , addNewOrder);
+orderRoutes.delete("/" , verifyToken , deleteOrder);
+
 
 module.exports = orderRoutes;
